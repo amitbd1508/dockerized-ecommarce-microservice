@@ -1,0 +1,67 @@
+version: "3.4"
+services:
+  mse-client-app:
+    image: 'mse-react'
+#      build:
+#       dockerfile: client/Dockerfile
+#     context: ./client
+#    restart: on-failure
+    container_name: msereact
+    
+    ports:
+      - '3000:3000'
+
+  post-backend:
+    image: 'mse-post'
+      #build:
+      # dockerfile: Dockerfile
+    # context: ./backend
+#    restart: on-failure
+    container_name: postsserver
+    
+    ports:
+      - '4000:4000'
+
+  mse-comment:
+    image: 'mse-comment'
+    #build:
+    # dockerfile: Dockerfile
+    # context: ./backend
+#    restart: on-failure
+    container_name: msecomment
+    
+    ports:
+      - '4001:4001'
+  mse-query:
+    image: 'mse-query'
+    #build:
+    # dockerfile: Dockerfile
+    # context: ./backend
+#    restart: on-failure
+    container_name: msequery
+    
+    ports:
+      - '4002:4002'
+
+
+  mse-moderation:
+    image: 'amitbd1508/mse-moderation'
+    #build:
+    # dockerfile: Dockerfile
+    # context: ./backend
+#    restart: on-failure
+    container_name: msemoderation
+    
+    ports:
+      - '4003:4003'
+
+  mse-event-bus:
+    image: 'mse-event-bus'
+    #build:
+    # dockerfile: Dockerfile
+    # context: ./backend
+#    restart: on-failure
+    container_name: mseeventbus
+    
+    ports:
+      - '4005:4005'
