@@ -1,9 +1,8 @@
-FROM node:13
+FROM node:alpine
+
 WORKDIR /app
-COPY package.json /app
-RUN npm install react-scripts -g
+COPY package.json ./
 RUN npm install
-COPY . /app
-RUN ls
-CMD npm start
-EXPOSE 3000
+COPY ./ ./
+
+CMD ["npm", "start"]
